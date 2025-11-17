@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Min Bokliste</title>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="bg-video">
+  <source src="./background.library.mp4" type="video/mp4">
+</video>
+
+<main class="app">
+<header>
+<h1>Min Bokliste</h1>
+<p class="subtitle">Legg til, filtrer og sorter bøker. </p>
+</header>
+
+<section class="controls">
+<form id="book-form" class="card form">
+<h2>Legg til bok</h2>
+<input id="id" type="hidden" />
+<label> Tittel <input id="title" placeholder="F.eks. Sult" required /></label>
+<label> Forfatter <input id="author" placeholder="Forfatter" required /></label>
+<label> Sjanger <input id="genre" placeholder="Sjanger (f.eks. Roman)" /></label>
+<label> Sider <input id="pages" type="number" min="1" placeholder="Sider" /></label>
+<div class="form-actions">
+<button id="submit-btn" type="submit">Lagre</button>
+<button id="clear-btn" type="button">Tøm</button>
+</div>
+</form>
+
+<div class="card filters">
+<h2>Filtrer & Sorter</h2>
+
+<!-- search -->
+<label> Søk <input id="search" placeholder="Søk tittel eller forfatter" /></label>
+
+<label> Sjanger
+<select id="filter-genre">
+<option value="">Alle</option>
+</select>
+</label>
+
+<!-- Sorting-dropdown-menu -->
+<label> Sorter
+<select id="sort-by">
+<option value="title">Tittel (A-Å)</option>
+<option value="author">Forfatter (A-Å)</option>
+<option value="pages-desc">Sider (størst først)</option>
+<option value="date-desc">Nyeste først</option>
+<option value="favorite">Favoritter først</option>
+</select>
+</label>
+<label> Vis
+<select id="view-mode">
+<option value="all">Alle</option>
+<option value="favorites">Favoritter</option>
+</select>
+</label>
+<button id="clear-storage" class="danger">Slett alle bøker</button>
+</div>
+</section>
+
+
+<section class="dashboard">
+<div class="card list-card">
+<h2>Bøker</h2>
+<table class="book-table">
+<thead>
+<tr>
+    <th>Favoritt</th>
+    <th>Tittel</th>
+    <th>Forfatter</th>
+    <th>Sjanger</th>
+    <th>Sider</th>
+</tr>
+</thead>
+<tbody id="book-list"></tbody>
+</table>
+</div>
+
+
+<aside class="card stats-card">
+<h2>Statistikk</h2>
+<ul id="stats">
+<li id="total-books">Totalt: 0</li>
+<li id="total-pages">Totalt sider: 0</li>
+<li id="books-per-genre">Bøker per sjanger: —</li>
+</ul>
+</aside>
+</section>
+
+
+<footer>
+<p>Bygget med moderne JavaScript. Lokal data i localStorage.</p>
+</footer>
+</main>
+
+
+
+</body>
+</html>
