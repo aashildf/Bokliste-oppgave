@@ -1,6 +1,9 @@
 
 
 Min Bokliste - JavaScript Webapp:
+
+<img width="2548" height="1218" alt="Skjermbilde 2026-01-04 203633" src="https://github.com/user-attachments/assets/22d82988-80e3-4aa9-91d4-fe501dd27f4d" />
+
 Dette prosjektet er en enkel webapplikasjon hvor brukeren kan legge inn, vise og administrere bøker. Data lagres i localStorage slik at de ikke forsvinner når siden lukkes.
 
 Funksjonalitet:
